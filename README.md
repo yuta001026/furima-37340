@@ -14,6 +14,7 @@
 | birthday           | date   | null: false|
 ### Association
  - has_many :items
+ - has_many :buys
 
 ## items テーブル
 
@@ -29,6 +30,7 @@
 | user            | references | null: false foreign_key: true |
 ### Association
 - belongs_to :user 
+- has_one :item
 
 ## buys テーブル
 | Column             | Type         | Options    |
@@ -37,7 +39,6 @@
 ### Association
 - belongs_to :user
 - belongs_to :item
-- has_one :address
 
 # addresses テーブル
 | Column            | Type     | Options    |
