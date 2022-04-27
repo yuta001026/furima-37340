@@ -5,7 +5,7 @@
 
 | Column             | Type   | Options    |
 | nickname           | string | null: false|
-| email              | string | unique: true|
+| email              | string | unique: true null: false |
 | encrypted_password | string | null: false|
 | name_sei           | string | null: false|
 | name_mei           | string | null: false|
@@ -30,7 +30,7 @@
 | user            | references | null: false foreign_key: true |
 ### Association
 - belongs_to :user 
-- has_one :item
+
 
 ## buys テーブル
 | Column             | Type         | Options    |
@@ -39,6 +39,7 @@
 ### Association
 - belongs_to :user
 - belongs_to :item
+- has_one :address
 
 # addresses テーブル
 | Column            | Type     | Options    |
@@ -49,5 +50,4 @@
 | building          | string   |     |
 | telephone_ number | string   | null: false|
 | buy | references | null: false foreign_key: true |
-- belongs_to :user
-- has_one :address
+- belongs_to :buy
