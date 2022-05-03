@@ -11,6 +11,6 @@ class User < ApplicationRecord
          validates :name_sei, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: '全角文字を使用してください' }
          validates :name_mei, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: '全角文字を使用してください' }
          validates :name_sei_kana, presence: true, format: { with: /\A[ァ-ヶ]+\z/, message: '全角文字を使用してください' }
-         validates :name_sei_kana, presence: true, format: { with: /\A[ァ-ヶ]+\z/, message: '全角文字を使用してください' }
+         validates :name_mei_kana, presence: true, format: { with: /\A[ァ-ヶ]+\z/, message: '全角文字を使用してください' }
          validates :birthday, presence: true
 end
