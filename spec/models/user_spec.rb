@@ -4,9 +4,10 @@ require 'rails_helper'
     @user = FactoryBot.build(:user)
   end
 
-   describe "ユーザー新規登録" do
+  describe "ユーザー新規登録" do
     context '新規登録できるとき' do
       it '全ての情報が存在すれば登録できる' do
+        expect(@user).to be_valid
       end
     end
     context '新規登録できないとき' do
@@ -109,6 +110,6 @@ require 'rails_helper'
       @user.valid?
       expect(@user.errors.full_messages).to include("Birthday can't be blank")
      end
-   end
+    end
   end
 end
