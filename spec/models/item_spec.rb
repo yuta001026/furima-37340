@@ -18,6 +18,12 @@ describe "商品出品機能" do
     expect(@item.errors.full_messages).to include("Name can't be blank")
    end
 
+   it "画像が空だと登録できない" do
+    @item.image = nil
+    @item.valid?
+    expect(@item.errors.full_messages).to include("Image can't be blank")
+   end
+
    it "商品の説明が空だと登録できない" do
     @item.explain = ''
     @item.valid?
@@ -63,7 +69,7 @@ describe "商品出品機能" do
    it "ユーザーが空だと登録できない" do
     @item.user = nil
     @item.valid?
-    expect(@item.errors.full_messages).to include("User can't be blank")
+    expect(@item.errors.full_messages).to include("User must exist")
    end
 
    it "価格が全角数値を含む状態では登録できない" do
