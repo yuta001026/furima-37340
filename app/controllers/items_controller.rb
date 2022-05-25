@@ -12,7 +12,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    binding.pry
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path
@@ -25,9 +24,9 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = Item.find(params[:id])
+    @item = Item.find(params[:id])
     if @item.user == current_user
-      item.destroy
+      @item.destroy
       redirect_to root_path
    else
       redirect_to root_path

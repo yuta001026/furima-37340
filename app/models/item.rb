@@ -6,6 +6,7 @@ class Item < ApplicationRecord
   belongs_to :state
   belongs_to :delivery_fee
   belongs_to :user
+  belongs_to :buy
   has_one_attached :image
   validates :name,    presence: true
   validates :explain, presence: true
