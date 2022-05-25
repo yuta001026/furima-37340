@@ -46,6 +46,11 @@ describe '購入内容確認' do
       @buy_address.valid?
       expect(@buy_address.errors.full_messages).to include("Telephone number is invalid")
     end
+    it "tokenが空では登録できないこと" do
+      @buy.token = nil
+      @buy.valid?
+      expect(@buy.errors.full_messages).to include("Token can't be blank")
+    end
    end
   end
  end

@@ -1,6 +1,6 @@
 class BuyAddress
   include ActiveModel::Model
-  attr_accessor :postal_code,:region_id,:municipality,:house_number,:building,:telephone_number, :item_id, :user_id
+  attr_accessor :postal_code,:region_id,:municipality,:house_number,:building,:telephone_number, :item_id, :user_id, :token
 
 
   # ここにバリデーションの処理を書く
@@ -11,6 +11,7 @@ class BuyAddress
     validates :telephone_number
     validates :telephone_number, format: {with: /\A\d{10,11}\z/, message: "is invalid"}
     validates :region_id, numericality: {other_than: 0, message: "can't be blank"}
+    validates :token, presence: true
   end
 
   def save
