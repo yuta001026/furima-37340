@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   belongs_to :delivery_fee
   belongs_to :user
   has_one_attached :image
+  has_one   :buy
   validates :name,    presence: true
   validates :explain, presence: true
   with_options presence: true, format: {with:  /\A[0-9]+\z/} do
