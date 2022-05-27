@@ -29,11 +29,11 @@ end
   end
 
   def set_item
-    @item = Item.find(params[:id])
+    @item = Item.find(params[:item_id])
     end
 
   def move_to_signed_in
-    if user_signed_in?
+    unless user_signed_in?
       redirect_to '/users/sign_in'
     end
   end
